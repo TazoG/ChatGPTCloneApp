@@ -3,5 +3,6 @@
 *.xcuserstate
 *.xcworkspace
 *.xcuserdata
+*.xcconfig
 DerivedData/
 build/

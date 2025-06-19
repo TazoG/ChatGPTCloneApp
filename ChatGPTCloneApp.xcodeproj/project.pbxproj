@@ -11,6 +11,11 @@
 		DAAC0ABB2E046D040006D33E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC0ABA2E046D040006D33E /* ContentView.swift */; };
 		DAAC0ABD2E046D070006D33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAC0ABC2E046D070006D33E /* Assets.xcassets */; };
 		DAAC0AC02E046D070006D33E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAC0ABF2E046D070006D33E /* Preview Assets.xcassets */; };
+		DAAC0ACC2E04738A0006D33E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC0ACB2E04738A0006D33E /* Message.swift */; };
+		DAAC0ACE2E0473A30006D33E /* GPTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC0ACD2E0473A30006D33E /* GPTResponse.swift */; };
+		DAAC0AD02E0473DC0006D33E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC0ACF2E0473DC0006D33E /* NetworkService.swift */; };
+		DAAC0AD22E04740C0006D33E /* GPTNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC0AD12E04740C0006D33E /* GPTNetworkService.swift */; };
+		DAAC0AD42E0478E60006D33E /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC0AD32E0478E60006D33E /* ChatViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,12 @@
 		DAAC0ABA2E046D040006D33E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DAAC0ABC2E046D070006D33E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAAC0ABF2E046D070006D33E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DAAC0ACB2E04738A0006D33E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		DAAC0ACD2E0473A30006D33E /* GPTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTResponse.swift; sourceTree = "<group>"; };
+		DAAC0ACF2E0473DC0006D33E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		DAAC0AD12E04740C0006D33E /* GPTNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTNetworkService.swift; sourceTree = "<group>"; };
+		DAAC0AD32E0478E60006D33E /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		DAAC0AD72E048B250006D33E /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Secrets.xcconfig; path = Resources/Secrets.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +62,16 @@
 		DAAC0AB72E046D040006D33E /* ChatGPTCloneApp */ = {
 			isa = PBXGroup;
 			children = (
+				DAAC0AC62E0470E90006D33E /* Models */,
+				DAAC0AC72E0470FF0006D33E /* Views */,
+				DAAC0AC82E0471080006D33E /* ViewModels */,
+				DAAC0AC92E0471160006D33E /* Service */,
+				DAAC0ACA2E0471420006D33E /* Utilities */,
 				DAAC0AB82E046D040006D33E /* ChatGPTCloneAppApp.swift */,
 				DAAC0ABA2E046D040006D33E /* ContentView.swift */,
 				DAAC0ABC2E046D070006D33E /* Assets.xcassets */,
 				DAAC0ABE2E046D070006D33E /* Preview Content */,
+				DAAC0AD72E048B250006D33E /* Secrets.xcconfig */,
 			);
 			path = ChatGPTCloneApp;
 			sourceTree = "<group>";
@@ -65,6 +82,46 @@
 				DAAC0ABF2E046D070006D33E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DAAC0AC62E0470E90006D33E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAAC0ACB2E04738A0006D33E /* Message.swift */,
+				DAAC0ACD2E0473A30006D33E /* GPTResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DAAC0AC72E0470FF0006D33E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DAAC0AC82E0471080006D33E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DAAC0AD32E0478E60006D33E /* ChatViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DAAC0AC92E0471160006D33E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DAAC0ACF2E0473DC0006D33E /* NetworkService.swift */,
+				DAAC0AD12E04740C0006D33E /* GPTNetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DAAC0ACA2E0471420006D33E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +194,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAAC0AD22E04740C0006D33E /* GPTNetworkService.swift in Sources */,
+				DAAC0AD42E0478E60006D33E /* ChatViewModel.swift in Sources */,
+				DAAC0AD02E0473DC0006D33E /* NetworkService.swift in Sources */,
+				DAAC0ACC2E04738A0006D33E /* Message.swift in Sources */,
 				DAAC0ABB2E046D040006D33E /* ContentView.swift in Sources */,
+				DAAC0ACE2E0473A30006D33E /* GPTResponse.swift in Sources */,
 				DAAC0AB92E046D040006D33E /* ChatGPTCloneAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +209,7 @@
 /* Begin XCBuildConfiguration section */
 		DAAC0AC12E046D070006D33E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAAC0AD72E048B250006D33E /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -278,8 +341,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,8 +370,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,6 +385,99 @@
 			};
 			name = Release;
 		};
+		DAAC0AD82E048D0C0006D33E /* Secrets.xcconfig */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAAC0AD72E048B250006D33E /* Secrets.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Secrets.xcconfig;
+		};
+		DAAC0AD92E048D0C0006D33E /* Secrets.xcconfig */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChatGPTCloneApp/Preview Content\"";
+				DEVELOPMENT_TEAM = W25CN6H3TY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TazoG.ChatGPTCloneApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Secrets.xcconfig;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -329,6 +485,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAAC0AC12E046D070006D33E /* Debug */,
+				DAAC0AD82E048D0C0006D33E /* Secrets.xcconfig */,
 				DAAC0AC22E046D070006D33E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -338,6 +495,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAAC0AC42E046D070006D33E /* Debug */,
+				DAAC0AD92E048D0C0006D33E /* Secrets.xcconfig */,
 				DAAC0AC52E046D070006D33E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
