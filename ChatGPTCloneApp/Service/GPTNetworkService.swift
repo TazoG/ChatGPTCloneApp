@@ -9,26 +9,26 @@ import Foundation
 
 final class GPTNetworkService: NetworkService {
     private let apiKey: String
+    private let session: URLSession
+    private let baseURL = URL(string: "https://api.openai.com/v1/chat/completions")!
 
-    init() {
-        guard let key = ProcessInfo.processInfo.environment["OPENAI_API_KEY"] else {
+    init(apiKey: String? = ProcessInfo.processInfo.environment["OPENAI_API_KEY"],
+         session: URLSession = .shared) {
+        guard let key = apiKey else {
             fatalError("❌ OPENAI_API_KEY not found in environment")
         }
         self.apiKey = key
+        self.session = session
 
         print("🔑 API KEY:", ProcessInfo.processInfo.environment["OPENAI_API_KEY"] ?? "Not Found")
 
     }
 
     func sendMessage(_ message: String) async throws -> String {
-        guard let url = URL(string: "https://api.openai.com/v1/chat/completions") else {
-            throw URLError(.badURL)
-        }
-
-        let headers = [
-            "Authorization": "Bearer \(apiKey)",
-            "Content-Type": "application/json"
-        ]
+        var request = URLRequest(url: baseURL)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
         let body: [String: Any] = [
             "model": "gpt-3.5-turbo",
@@ -37,16 +37,21 @@ final class GPTNetworkService: NetworkService {
             ]
         ]
 
-        let jsonData = try JSONSerialization.data(withJSONObject: body)
+        request.httpBody = try JSONSerialization.data(withJSONObject: body)
 
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.allHTTPHeaderFields = headers
-        request.httpBody = jsonData
+        let (data, response) = try await session.data(for: request)
 
-        let (data, _) = try await URLSession.shared.data(for: request)
-        let decoded = try JSONDecoder().decode(GPTResponse.self, from: data)
-        return decoded.choices.first?.message.content ?? "No response"
+        if let httpResponse = response as? HTTPURLResponse, !(200...299).contains(httpResponse.statusCode) {
+            let errorString = String(data: data, encoding: .utf8) ?? "Unknown server error"
+            throw GPTNetworkError.serverError(errorString)
+        }
+
+        do {
+            let decoded = try JSONDecoder().decode(GPTResponse.self, from: data)
+            return decoded.choices.first?.message.content ?? "(no content)"
+        } catch {
+            throw GPTNetworkError.decodingError
+        }
     }
 }
 

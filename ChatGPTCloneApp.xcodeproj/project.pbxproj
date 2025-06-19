@@ -16,6 +16,7 @@
 		DAAC0AD02E0473DC0006D33E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC0ACF2E0473DC0006D33E /* NetworkService.swift */; };
 		DAAC0AD22E04740C0006D33E /* GPTNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC0AD12E04740C0006D33E /* GPTNetworkService.swift */; };
 		DAAC0AD42E0478E60006D33E /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC0AD32E0478E60006D33E /* ChatViewModel.swift */; };
+		DAAC0ADB2E048FD00006D33E /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC0ADA2E048FD00006D33E /* NetworkServiceError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DAAC0AD12E04740C0006D33E /* GPTNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTNetworkService.swift; sourceTree = "<group>"; };
 		DAAC0AD32E0478E60006D33E /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		DAAC0AD72E048B250006D33E /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Secrets.xcconfig; path = Resources/Secrets.xcconfig; sourceTree = SOURCE_ROOT; };
+		DAAC0ADA2E048FD00006D33E /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			children = (
 				DAAC0ACF2E0473DC0006D33E /* NetworkService.swift */,
 				DAAC0AD12E04740C0006D33E /* GPTNetworkService.swift */,
+				DAAC0ADA2E048FD00006D33E /* NetworkServiceError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAAC0AD22E04740C0006D33E /* GPTNetworkService.swift in Sources */,
+				DAAC0ADB2E048FD00006D33E /* NetworkServiceError.swift in Sources */,
 				DAAC0AD42E0478E60006D33E /* ChatViewModel.swift in Sources */,
 				DAAC0AD02E0473DC0006D33E /* NetworkService.swift in Sources */,
 				DAAC0ACC2E04738A0006D33E /* Message.swift in Sources */,
