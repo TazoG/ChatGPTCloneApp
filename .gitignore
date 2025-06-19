@@ -4,5 +4,8 @@
 *.xcworkspace
 *.xcuserdata
 *.xcconfig
+xcuserdata/
+*.xcscheme
+xcschememanagement.plist
 DerivedData/
 build/

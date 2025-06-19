@@ -11,7 +11,7 @@ import Foundation
 final class ChatViewModel: ObservableObject {
     @Published var messages: [Message] = []
     @Published var isLoading: Bool = false
-    @Published var errorMessage: String?
+    @Published var error: IdentifiableError?
 
     private let networkService: NetworkService
 
@@ -25,7 +25,7 @@ final class ChatViewModel: ObservableObject {
         let userMessage = Message(isUser: true, content: text)
         messages.append(userMessage)
         isLoading = true
-        errorMessage = nil
+        error = nil
 
         Task {
             do {
@@ -33,7 +33,7 @@ final class ChatViewModel: ObservableObject {
                 let gptMessage = Message(isUser: false, content: response)
                 messages.append(gptMessage)
             } catch {
-                errorMessage = "⚠️ \(error.localizedDescription)"
+                self.error = IdentifiableError(message: error.localizedDescription)
             }
             isLoading = false
         }

@@ -19,9 +19,6 @@ final class GPTNetworkService: NetworkService {
         }
         self.apiKey = key
         self.session = session
-
-        print("🔑 API KEY:", ProcessInfo.processInfo.environment["OPENAI_API_KEY"] ?? "Not Found")
-
     }
 
     func sendMessage(_ message: String) async throws -> String {
