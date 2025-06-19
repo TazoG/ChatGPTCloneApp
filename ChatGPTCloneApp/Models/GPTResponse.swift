@@ -8,14 +8,15 @@
 import Foundation
 
 struct GPTResponse: Codable {
-    struct Choice: Codable {
-        let message: ChatMessage
-    }
-
-    struct ChatMessage: Codable {
-        let role: String
-        let content: String
-    }
-
     let choices: [Choice]
 }
+
+struct Choice: Codable {
+    let message: ChatMessage
+}
+
+struct ChatMessage: Codable {
+    let role: String
+    let content: String
+}
+
