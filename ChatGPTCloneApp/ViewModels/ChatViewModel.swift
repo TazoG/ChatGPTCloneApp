@@ -19,6 +19,12 @@ final class ChatViewModel: ObservableObject {
         self.networkService = networkService
     }
 
+//    func testModels() {
+//        Task {
+//            try await (networkService as? GeminiNetworkService)?.fetchAvailableModels()
+//        }
+//    }
+
     func sendMessage(_ text: String) {
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else { return }
 
@@ -30,8 +36,8 @@ final class ChatViewModel: ObservableObject {
         Task {
             do {
                 let response = try await networkService.sendMessage(text)
-                let gptMessage = Message(isUser: false, content: response)
-                messages.append(gptMessage)
+                let geminiMessage = Message(isUser: false, content: response)
+                messages.append(geminiMessage)
             } catch {
                 self.error = IdentifiableError(message: error.localizedDescription)
             }

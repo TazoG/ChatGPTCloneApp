@@ -32,7 +32,7 @@ struct MessageBubbleView: View {
 #Preview {
     VStack {
         MessageBubbleView(message: Message(isUser: true, content: "Hello from user"))
-        MessageBubbleView(message: Message(isUser: false, content: "Hello from GPT"))
+        MessageBubbleView(message: Message(isUser: false, content: "Hello from Gemini"))
     }
     .padding()
     .previewLayout(.sizeThatFits)

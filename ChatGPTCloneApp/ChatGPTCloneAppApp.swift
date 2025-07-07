@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct ChatGPTCloneAppApp: App {
-    @StateObject private var viewModel = ChatViewModel(networkService: GPTNetworkService())
+    @StateObject private var viewModel = ChatViewModel(networkService: GeminiNetworkService())
 
     var body: some Scene {
         WindowGroup {

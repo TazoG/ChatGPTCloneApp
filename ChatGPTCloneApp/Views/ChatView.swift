@@ -38,6 +38,9 @@ struct ChatView: View {
                             .id(bottomID)
                     }
                 }
+//                .onAppear {
+//                    viewModel.testModels()
+//                }
                 .onChange(of: viewModel.messages.count) { _ in
                     withAnimation {
                         proxy.scrollTo(bottomID, anchor: .bottom)

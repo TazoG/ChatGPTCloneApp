@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum GPTNetworkError: Error, LocalizedError {
+enum GeminiNetworkError: Error, LocalizedError {
     case invalidURL
     case missingAPIKey
     case decodingError
@@ -18,11 +18,11 @@ enum GPTNetworkError: Error, LocalizedError {
         case .invalidURL:
             return "❌ URL is invalid"
         case .missingAPIKey:
-            return "❌ Missing OpenAI API key"
+            return "❌ Missing Gemini API key"
         case .decodingError:
-            return "❌ Failed to decode GPT response"
+            return "❌ Failed to decode Gemini response"
         case .serverError(let message):
-            return "❌ GPT API Error: \(message)"
+            return "❌ Gemini API Error: \(message)"
         }
     }
 }
