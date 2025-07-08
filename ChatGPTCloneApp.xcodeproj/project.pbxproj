@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DAA9D06B2E1C7C9600405D5C /* ModelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9D06A2E1C7C9600405D5C /* ModelList.swift */; };
+		DAABE3AB2E1DA328006E8310 /* ChatInputBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABE3AA2E1DA328006E8310 /* ChatInputBarView.swift */; };
 		DAAC0AB92E046D040006D33E /* ChatGPTCloneAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC0AB82E046D040006D33E /* ChatGPTCloneAppApp.swift */; };
 		DAAC0ABD2E046D070006D33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAC0ABC2E046D070006D33E /* Assets.xcassets */; };
 		DAAC0AC02E046D070006D33E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAC0ABF2E046D070006D33E /* Preview Assets.xcassets */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		DAA9D06A2E1C7C9600405D5C /* ModelList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelList.swift; sourceTree = "<group>"; };
+		DAABE3AA2E1DA328006E8310 /* ChatInputBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputBarView.swift; sourceTree = "<group>"; };
 		DAAC0AB52E046D040006D33E /* ChatGPTCloneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatGPTCloneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAC0AB82E046D040006D33E /* ChatGPTCloneAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTCloneAppApp.swift; sourceTree = "<group>"; };
 		DAAC0ABC2E046D070006D33E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DAABE3A92E1DA2C2006E8310 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DAAC0AE02E04938D0006D33E /* MessageBubbleView.swift */,
+				DAABE3AA2E1DA328006E8310 /* ChatInputBarView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		DAAC0AAC2E046D040006D33E = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				DAAC0ADE2E0493570006D33E /* ChatView.swift */,
-				DAAC0AE02E04938D0006D33E /* MessageBubbleView.swift */,
+				DAABE3A92E1DA2C2006E8310 /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,6 +228,7 @@
 				DAAC0ADF2E0493570006D33E /* ChatView.swift in Sources */,
 				DAAC0ADB2E048FD00006D33E /* NetworkServiceError.swift in Sources */,
 				DAAC0AD42E0478E60006D33E /* ChatViewModel.swift in Sources */,
+				DAABE3AB2E1DA328006E8310 /* ChatInputBarView.swift in Sources */,
 				DAAC0AE12E04938E0006D33E /* MessageBubbleView.swift in Sources */,
 				DAAC0AD02E0473DC0006D33E /* NetworkService.swift in Sources */,
 				DAAC0ACC2E04738A0006D33E /* Message.swift in Sources */,
