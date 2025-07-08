@@ -18,21 +18,26 @@ struct ChatView: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            MessagesListView(
-                messages: viewModel.messages,
-                isLoading: viewModel.isLoading,
-                bottomID: bottomID
-            )
+        ZStack {
 
-            Divider()
+            ChatBackgroundView()
 
-            ChatInputBarView(text: $userInput, onSend: send)
-        }
-        .navigationTitle("Tazo AI Chat")
-        .navigationBarTitleDisplayMode(.inline)
-        .alert(item: $viewModel.error) { error in
-            Alert(title: Text("Error"), message: Text(error.message), dismissButton: .default(Text("OK")))
+            VStack(spacing: 0) {
+                MessagesListView(
+                    messages: viewModel.messages,
+                    isLoading: viewModel.isLoading,
+                    bottomID: bottomID
+                )
+
+                Divider()
+
+                ChatInputBarView(text: $userInput, onSend: send)
+            }
+            .navigationTitle("Tazo AI Chat")
+            .navigationBarTitleDisplayMode(.inline)
+            .alert(item: $viewModel.error) { error in
+                Alert(title: Text("Error"), message: Text(error.message), dismissButton: .default(Text("OK")))
+            }
         }
     }
 

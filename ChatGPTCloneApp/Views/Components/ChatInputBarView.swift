@@ -13,28 +13,35 @@ struct ChatInputBarView: View {
     @FocusState private var isFocused: Bool
 
     var body: some View {
-        HStack {
-            TextField("Type a message...", text: $text)
-                .textFieldStyle(.roundedBorder)
-                .focused($isFocused)
-                .onSubmit {
-                    handleSend()
-                }
+            HStack(spacing: 12) {
+                TextField("Type a message...", text: $text)
+                    .padding(12)
+                    .background(Color.white.opacity(0.95))
+                    .cornerRadius(20)
+                    .focused($isFocused)
+                    .onSubmit {
+                        handleSend()
+                    }
 
-            if !text.trimmingCharacters(in: .whitespaces).isEmpty {
-                Button(action: handleSend) {
-                    Image(systemName: "paperplane.fill")
-                        .rotationEffect(.degrees(45))
-                        .foregroundColor(.accentColor)
+                if !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                    Button(action: handleSend) {
+                        Image(systemName: "paperplane.fill")
+                            .rotationEffect(.degrees(45))
+                            .foregroundColor(.white)
+                            .padding(12)
+                            .background(Color.accentColor)
+                            .clipShape(Circle())
+                            .shadow(radius: 2)
+                    }
                 }
-                .padding(.leading, 4)
             }
+            .padding(.horizontal)
+            .padding(.vertical, 10)
+            .background(.ultraThinMaterial) // stylish blur
+            .clipShape(RoundedRectangle(cornerRadius: 25))
+            .padding(.horizontal)
+            .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: -2)
         }
-        .padding()
-        .onAppear {
-            isFocused = true
-        }
-    }
 
     private func handleSend() {
         let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -47,12 +54,18 @@ struct ChatInputBarView: View {
 
 
 #Preview {
-    @State var input = "Test message"
-
-    return ChatInputBarView(text: .constant("Preview message")) {
-        print("Send tapped")
-    }
+    ChatInputBarView(
+        text: .constant("Hello"),
+        onSend: {}
+    )
     .padding()
-    .previewLayout(.sizeThatFits)
+    .background(
+        LinearGradient(
+            gradient: Gradient(colors: [Color("chatTop"), Color("chatBottom")]),
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+        .ignoresSafeArea()
+    )
 }
 
