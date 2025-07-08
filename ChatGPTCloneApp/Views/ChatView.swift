@@ -19,38 +19,20 @@ struct ChatView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            ScrollViewReader { proxy in
-                ScrollView {
-                    LazyVStack(spacing: 8) {
-                        ForEach(viewModel.messages) { message in
-                            MessageBubbleView(message: message)
-                                .padding(.horizontal)
-                        }
-
-                        if viewModel.isLoading {
-                            ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: .gray))
-                                .padding()
-                        }
-
-                        Color.clear
-                            .frame(height: 1)
-                            .id(bottomID)
-                    }
-                }
-                //                .onAppear {
-                //                    viewModel.testModels()
-                //                }
-                .onChange(of: viewModel.messages.count) { _ in
-                    withAnimation {
-                        proxy.scrollTo(bottomID, anchor: .bottom)
-                    }
-                }
-            }
+            MessagesListView(
+                messages: viewModel.messages,
+                isLoading: viewModel.isLoading,
+                bottomID: bottomID
+            )
 
             Divider()
 
             ChatInputBarView(text: $userInput, onSend: send)
+        }
+        .navigationTitle("Tazo AI Chat")
+        .navigationBarTitleDisplayMode(.inline)
+        .alert(item: $viewModel.error) { error in
+            Alert(title: Text("Error"), message: Text(error.message), dismissButton: .default(Text("OK")))
         }
     }
 

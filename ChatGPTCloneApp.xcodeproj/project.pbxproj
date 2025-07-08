@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		DAA9D06B2E1C7C9600405D5C /* ModelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9D06A2E1C7C9600405D5C /* ModelList.swift */; };
 		DAABE3AB2E1DA328006E8310 /* ChatInputBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABE3AA2E1DA328006E8310 /* ChatInputBarView.swift */; };
+		DAABE3AD2E1DAB22006E8310 /* MessagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABE3AC2E1DAB22006E8310 /* MessagesListView.swift */; };
+		DAABE3AF2E1DAF33006E8310 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAABE3AE2E1DAF33006E8310 /* LoadingIndicatorView.swift */; };
 		DAAC0AB92E046D040006D33E /* ChatGPTCloneAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC0AB82E046D040006D33E /* ChatGPTCloneAppApp.swift */; };
 		DAAC0ABD2E046D070006D33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAC0ABC2E046D070006D33E /* Assets.xcassets */; };
 		DAAC0AC02E046D070006D33E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAC0ABF2E046D070006D33E /* Preview Assets.xcassets */; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		DAA9D06A2E1C7C9600405D5C /* ModelList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelList.swift; sourceTree = "<group>"; };
 		DAABE3AA2E1DA328006E8310 /* ChatInputBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputBarView.swift; sourceTree = "<group>"; };
+		DAABE3AC2E1DAB22006E8310 /* MessagesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesListView.swift; sourceTree = "<group>"; };
+		DAABE3AE2E1DAF33006E8310 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
 		DAAC0AB52E046D040006D33E /* ChatGPTCloneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatGPTCloneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAC0AB82E046D040006D33E /* ChatGPTCloneAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTCloneAppApp.swift; sourceTree = "<group>"; };
 		DAAC0ABC2E046D070006D33E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 			children = (
 				DAAC0AE02E04938D0006D33E /* MessageBubbleView.swift */,
 				DAABE3AA2E1DA328006E8310 /* ChatInputBarView.swift */,
+				DAABE3AC2E1DAB22006E8310 /* MessagesListView.swift */,
+				DAABE3AE2E1DAF33006E8310 /* LoadingIndicatorView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -234,8 +240,10 @@
 				DAAC0ACC2E04738A0006D33E /* Message.swift in Sources */,
 				DAAC0AE32E0494C60006D33E /* IdentifiableError.swift in Sources */,
 				DAAC0ACE2E0473A30006D33E /* GeminiResponse.swift in Sources */,
+				DAABE3AF2E1DAF33006E8310 /* LoadingIndicatorView.swift in Sources */,
 				DAA9D06B2E1C7C9600405D5C /* ModelList.swift in Sources */,
 				DAAC0AE52E04959C0006D33E /* MockNetworkService.swift in Sources */,
+				DAABE3AD2E1DAB22006E8310 /* MessagesListView.swift in Sources */,
 				DAAC0AB92E046D040006D33E /* ChatGPTCloneAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

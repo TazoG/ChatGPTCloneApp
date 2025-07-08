@@ -13,7 +13,9 @@ struct ChatGPTCloneAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ChatView(viewModel: viewModel)
+            NavigationStack {
+                ChatView(viewModel: viewModel)
+            }
         }
     }
 }
