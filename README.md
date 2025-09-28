@@ -5,10 +5,6 @@
 
 ---
 
-# 🎥 Demo  
-![App Demo](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3psMHA5MGxsazNiNWNqbWlibWhyOWRnNWVpemhpOTFkbWZvMzltZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HNXX2MHyYSUNJfOUfe/giphy.gif)
-
-
 # 🛠 Tech Stack
 - *Language*: Swift 5.10  
 - *Framework*: SwiftUI  
@@ -35,3 +31,5 @@
 - Voice-to-Text integration
 - Rich message types (images, markdown)  
 
+# 🎥 Demo  
+![App Demo](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3psMHA5MGxsazNiNWNqbWlibWhyOWRnNWVpemhpOTFkbWZvMzltZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HNXX2MHyYSUNJfOUfe/giphy.gif)
