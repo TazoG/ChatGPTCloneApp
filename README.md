@@ -6,7 +6,7 @@
 ---
 
 # 🎥 Demo  
-![Tazo AI Chat App Demo](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3psMHA5MGxsazNiNWNqbWlibWhyOWRnNWVpemhpOTFkbWZvMzltZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HNXX2MHyYSUNJfOUfe/giphy.gif)
+![App Demo](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3psMHA5MGxsazNiNWNqbWlibWhyOWRnNWVpemhpOTFkbWZvMzltZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HNXX2MHyYSUNJfOUfe/giphy.gif)
 
 
 # 🛠 Tech Stack
