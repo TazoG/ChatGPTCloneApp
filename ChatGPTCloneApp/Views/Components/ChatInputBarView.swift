@@ -37,7 +37,7 @@ struct ChatInputBarView: View {
             }
             .padding(.horizontal)
             .padding(.vertical, 10)
-            .background(.ultraThinMaterial) // stylish blur
+            .background(.ultraThinMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 25))
             .padding(.horizontal)
             .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: -2)

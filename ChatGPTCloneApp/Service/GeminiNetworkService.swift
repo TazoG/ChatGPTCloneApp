@@ -10,7 +10,7 @@ import Foundation
 final class GeminiNetworkService: NetworkService {
     private let apiKey: String
     private let session: URLSession
-    private let baseURL = URL(string: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent")!
+    private let baseURL = URL(string: "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent")!
 
 
     init(apiKey: String? = ProcessInfo.processInfo.environment["GEMINI_API_KEY"],
@@ -23,26 +23,27 @@ final class GeminiNetworkService: NetworkService {
         self.session = session
     }
 
-//    func fetchAvailableModels() async throws {
-//        let apiKey = ProcessInfo.processInfo.environment["GEMINI_API_KEY"] ?? ""
-//        guard !apiKey.isEmpty else {
-//            print("❌ GEMINI_API_KEY არ მოიძებნა")
-//            return
-//        }
-//
-//        let url = URL(string: "https://generativelanguage.googleapis.com/v1beta/models?key=\(apiKey)")!
-//        let (data, _) = try await URLSession.shared.data(from: url)
-//
-//        let modelList = try JSONDecoder().decode(ModelList.self, from: data)
-//
-//        print("✅ ხელმისაწვდომი მოდელები:")
-//        for model in modelList.models {
-//            let methods = model.supportedGenerationMethods?.joined(separator: ", ") ?? "no methods"
-//            print("- \(model.name) [supports: \(methods)]")
-//        }
-//    }
+    func fetchAvailableModels() async throws {
+        let apiKey = ProcessInfo.processInfo.environment["GEMINI_API_KEY"] ?? ""
+        guard !apiKey.isEmpty else {
+            print("❌ GEMINI_API_KEY არ მოიძებნა")
+            return
+        }
+
+        let url = URL(string: "https://generativelanguage.googleapis.com/v1beta/models?key=\(apiKey)")!
+        let (data, _) = try await URLSession.shared.data(from: url)
+
+        let modelList = try JSONDecoder().decode(ModelList.self, from: data)
+
+        print("✅ ხელმისაწვდომი მოდელები:")
+        for model in modelList.models {
+            let methods = model.supportedGenerationMethods?.joined(separator: ", ") ?? "no methods"
+            print("- \(model.name) [supports: \(methods)]")
+        }
+    }
 
     func sendMessage(_ message: String) async throws -> String {
+//        try await fetchAvailableModels()
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: false)!
         components.queryItems = [URLQueryItem(name: "key", value: apiKey)]
 

@@ -55,3 +55,4 @@ struct MessagesListView: View {
     .padding()
     .previewLayout(.sizeThatFits)
 }
+
